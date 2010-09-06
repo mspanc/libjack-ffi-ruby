@@ -8,7 +8,7 @@ Version: `cat VERSION`
 Section: base
 Priority: optional
 Architecture: all
-Depends: libffi-ruby, libjack0
+Depends: ruby, libffi-ruby, libjack0
 Maintainer: marcin@saepia.net
 Description: Jack Audio Connection Kit bindings for ruby via FFI" > libjack-ffi-ruby/DEBIAN/control
 
