@@ -1,0 +1,40 @@
+= Introduction
+
+This is a wrapper for JACK[http://www.jackaudio.org].
+
+Here's a quick code sample. Currently no docs.
+
+  require 'jack'
+  
+  JACK::Client.new("myname") do |jack|
+    port = jack.port_by_name("system:capture_1")
+    port.connect("system:playback_1")
+    sleep 5
+    port.disconnect("system:playback_1")
+  end
+  
+
+Please notice that code is rather alpha-version and can contain bugs.  
+
+= Installation
+
+=== Ruby Versions
+
+It was tested with ruby 1.8.7 (2010-01-10 patchlevel 249). 
+
+=== Gems
+
+The driver's gems are hosted at Rubygems.org[http://rubygems.org]. Make sure you're
+using the latest version of rubygems:
+
+  $ gem update --system
+
+Then you can install the jack-ffi gem as follows:
+
+  $ gem install jack-ffi
+
+=== From the GitHub source
+
+The source code is available at http://github.com/saepia/libjack-ffi-ruby.
+You can either clone the git repository or download a tarball or zip file.
+Once you have the source, you can unpack it and use from wherever you downloaded.
