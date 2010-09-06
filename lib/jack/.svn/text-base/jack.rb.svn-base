@@ -1,0 +1,12 @@
+# One huge FIXME
+# Avoid using commandline calls and move to regular jack library via ffi
+
+class JACK
+  def initialize(name = nil)
+    @name = name
+  end
+  
+  def clients
+    `jack_lsp`.split("\n").collect{ |x| x.split(":").first if x.include?(":") unless x =~ /^system:/ }.compact.uniq
+  end
+end
