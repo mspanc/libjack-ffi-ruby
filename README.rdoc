@@ -33,6 +33,15 @@ Then you can install the jack-ffi gem as follows:
 
   $ gem install jack-ffi
 
+=== Ubuntu/Debian packages
+
+You can grab this source code from GitHub as follows:
+
+  $ git clone http://github.com/saepia/libjack-ffi-ruby.git
+  $ cd libjack-ffi-ruby/
+  $ ./build-debian-package.sh
+  $ sudo dpkg -i libjack-ffi-ruby1.8_`cat VERSION`_all.deb libjack-ffi-ruby_`cat VERSION`_all.deb
+  
 === From the GitHub source
 
 The source code is available at http://github.com/saepia/libjack-ffi-ruby.
