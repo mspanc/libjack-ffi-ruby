@@ -32,7 +32,7 @@ module JACK
       @client = client
       
       if identifier.is_a? String
-        @pointer = @client.port_by_name identifier
+        @pointer = @client.port_by_name(identifier).pointer
       else
         @pointer = identifier
       end
