@@ -45,7 +45,7 @@ module JACK
     def get_ports
       # TODO checking if i am connected
       # TODO parameters
-      jack_get_ports(@server, nil, nil, 0).read_array_of_string_until_end
+      jack_get_ports(@server, nil, nil, 0).read_array_of_string_until_end.collect{ |port| puts port; Port.new(port, self) }
     end
     
     def port_by_name(name)

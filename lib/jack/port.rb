@@ -28,8 +28,14 @@ module JACK
     FLAGS_CAN_MONITOR = 0x8
     FLAGS_IS_TERMINAL = 0x10
     
-    def initialize(pointer, client)
-      @pointer, @client = pointer, client
+    def initialize(identifier, client)
+      @client = client
+      
+      if identifier.is_a? String
+        @pointer = @client.port_by_name identifier
+      else
+        @pointer = identifier
+      end
     end
     
     def name
